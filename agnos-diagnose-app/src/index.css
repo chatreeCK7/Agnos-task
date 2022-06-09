@@ -9,28 +9,56 @@
 }
 .container{
     position: relative;
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    width: 40%;
-    height: 500px;
+    /* height: max-content; */
     background-color: white;
     box-shadow: 1px 1px 7px #888888;
     border-radius: 3%;
 }
+.container::after{
+    display: block;
+    background-image: url("../public/Assets/Images/default-abs.png");
+    background-repeat: no-repeat;
+    content: "";
+    /* content: url("../public/Assets/Images/default-abs.png"); */
+    /* width: fit-content;
+    height: max-content; */
+    margin-left: auto ;
+    margin-right: auto;
+    
+}
 .question{
-
     padding: 40px 0px 0px 0px;
     text-align: center;
 }
+.main-body{
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding-bottom: 20%;
+    margin-left: auto ;
+    margin-right: auto;
+    z-index: 0;
+}
+
+.all-abs-box, .egt-box2o, .egt-box2c, .ruq-box2o, .ruq-box2c, .rlq-box2o, .rlq-box2c, .luq-box2o, .luq-box2c, .llq-box2o, .llq-box2c, .umbilicus-box2o, .umbilicus-box2c, .suprapubic-box2o, .suprapubic-box2c{
+    position: absolute;
+    border: 1px solid black;
+    z-index: 2;
+}
+.egt-hl, .ruq-hl, .rlq-hl, .luq-hl, .llq-hl, .umbilicus-hl, .suprapubic-hl{
+    position: absolute;
+    z-index: 1;
+}
+.egt-ct, .ruq-ct, .rlq-ct, .luq-ct, .llq-ct, .umbilicus-ct, .suprapubic-ct{
+    position: absolute;
+}
+
 .next{
     display: block;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     padding: 15px 5px 5px 5px ;
-    width: 40%;
     background-color: white;
     border: 10px solid;
     border-image-slice: 1;
@@ -38,21 +66,207 @@
     border-radius: 1em;
     border-image-source: linear-gradient(to right,#47B5FF,#1363DF);
 }
-.main-body{
-    
-    position: absolute;
-    top: 20%;
-    display: block;
-    width: 100%;
-    margin-left:auto ;
-    margin-right: auto;
-    
+/*-------- Large Devices --------*/
+/*------- 992px and above -------*/
+@media (min-width: 992px) {
+    .container{
+        margin-top: 10%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container::after{
+        background-size: 420px 450px;
+        width: 420px;
+        height: 450px;
+    }
+    .main-body{
+        top: 10%;
+    }
+    .all-abs-box{
+        top: 89%;
+        left: 33%;
+        width: 30%;
+        height: 7%;
+    }
+    /* epigastrium */
+    .egt-box2o, .egt-box2c{
+        top: 45%;
+        left: 43%;
+        width: 10%;
+        height: 7%;
+    }
+    .egt-hl{
+        top: 14.7%;
+        left: 4.4%;
+        width: 91%;
+        height: 84%;
+    }
+    .egt-ct{
+        top: 14%;
+        left: 5.5%;
+        width: 91%;
+        height: 84%;
+    }
+    /* luq */
+    .luq-box2o, .luq-box2c{
+        top: 51%;
+        right: 37%;
+        width: 10%;
+        height: 7%;
+    }
+    .luq-hl{
+        top: 14.7%;
+        left: 4.7%;
+        width: 91%;
+        height: 84%;
+    }
+    .luq-ct{
+        top: 16%;
+        left: 7%;
+        width: 91%;
+        height: 84%;
+    }
+    /* llq */
+    .llq-box2o, .llq-box2c{
+        top: 60%;
+        right: 37%;
+        width: 10%;
+        height: 7.5%;
+    }
+    .llq-hl{
+        top: 15%;
+        left: 4.2%;
+        width: 92%;
+        height: 84%;
+    }
+    .llq-ct{
+        top: 15%;
+        left: 5%;
+        width: 91%;
+        height: 84%;
+    }
+    /* umbilicus */
+    .umbilicus-box2o, .umbilicus-box2c{
+        top: 56%;
+        left: 44%;
+        width: 9%;
+        height: 7%;
+    }
+    .umbilicus-hl{
+        top: 14.9%;
+        left: 4.5%;
+        width: 91%;
+        height: 84%;
+    }
+    .umbilicus-ct{
+        top: 16%;
+        left: 5.5%;
+        width: 91%;
+        height: 84%;
+    }
+    /* suprapubic */
+    .suprapubic-box2o, .suprapubic-box2c{
+        top: 65%;
+        left: 43%;
+        width: 10%;
+        height: 8%;
+    }
+    .suprapubic-hl{
+        top: 14.6%;
+        left: 3.89%;
+        width: 92%;
+        height: 85%;
+    }
+    .suprapubic-ct{
+        top: 15%;
+        left: 10%;
+        width: 91%;
+        height: 84%;
+    }
+    /* rlq */
+    .rlq-box2o, .rlq-box2c{
+        top: 60%;
+        left: 33%;
+        width: 10%;
+        height: 9%;
+    }
+    .rlq-hl{
+        top: 15%;
+        left: 3.6%;
+        width: 92%;
+        height: 84%;
+    }
+    .rlq-ct{
+        top: 11%;
+        left: 4%;
+        width: 91%;
+        height: 84%;
+    }
+    /* ruq */
+    .ruq-box2o, .ruq-box2c{
+        top: 51%;
+        left: 34%;
+        width: 10%;
+        height: 8%;
+    }
+    .ruq-hl{
+        top: 14.7%;
+        left: 4.1%;
+        width: 91%;
+        height: 84%;
+    }
+    .ruq-ct{
+        top: 22%;
+        left: 7%;
+        width: 91%;
+        height: 84%;
+    }
+    .next{
+        width: 450px;
+        margin-bottom: 50px;
+    }
 }
-.egt-box{
-    position: absolute;
-    top: 230px;
-    left: 95px;
-    width: 10%;
-    height: 5%;
-    border: 1px solid black;
+
+
+/*------- Medium Devices -------*/
+/*------- 768px to 991px -------*/
+@media (min-width:768px) and (max-width:991px){
+    .container{
+        margin-top: 30%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container::after{
+        background-size: 420px 450px;
+        width: 420px;
+        height: 450px;
+    }
+    .main-body{
+        top: 10%;
+    }
+    .next{
+        width: 450px;
+        margin-bottom: 50px;
+    }
+}
+/*------- Small Devices -------*/
+/*- equal to or less than 767px -*/
+@media(max-width:767px){
+    .container{
+        margin-top: 40%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container::after{
+        background-size: 210px 225px;
+        width: 210px;
+        height: 225px;
+    }
+    .main-body{
+        top: 10%;
+    }
+    .next{
+        width: 210px;
+        margin-bottom: 50px;
+    }
 }

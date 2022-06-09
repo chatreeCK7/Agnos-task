@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import IMAGES from '../../question-image.json'
+import AllAbs from "./all-abs";
 
-class Epigatrium extends React.Component{
+class Epigastrium extends Component{
     /* will use state to render the component to display or not display*/ 
     constructor(props){
         super(props)
-        this.state = {isClicked: false,
+        this.state = {
+                      isClicked: false,
                       allSelected: false
                      };
         this.handleClick = this.handleClick.bind(this);
@@ -17,25 +19,30 @@ class Epigatrium extends React.Component{
     }
     handleClick(){
         console.log("Yeah,you hit it !");
-        console.log(this.state.isClicked);
+        console.log("toggle from "+this.state.isClicked);
         this.toggleState();
-        console.log(this.state.isClicked);
     }
     render(){
         return(
+            // <AllAbs onChange={(value)=> {this.setState(
+            //     {allSelected: value}
+            // )}}/>,
             <div id="epigastrium">
-                {!this.state.isClicked && (
-                    <div className="egt-box" onClick={this.handleClick}></div>
+                {!this.state.isClicked && !this.state.allSelected && (
+                    <div className="egt-box2o" onClick={this.handleClick}></div>
                 )}
                 {this.state.isClicked && (
-                    <img className="click2close" src={IMAGES.Abs.epigastriumHighlight} onClick={this.handleClick}/>
+                    <div className="egt-box2c" onClick={this.handleClick}></div>
+                )}
+                {this.state.isClicked && (
+                    <img className="egt-hl" src={IMAGES.Abs.epigastriumHighlight}/>
                 )}
                 {this.state.isClicked && !this.state.allSelected && (
-                    <img src={IMAGES.Abs.epigastriumActive}/>
+                    <img className="egt-ct" src={IMAGES.Abs.epigastriumActive}/>
                 )}
             </div>
         )
     }
 }
 
-export default Epigatrium;
+export default Epigastrium;
