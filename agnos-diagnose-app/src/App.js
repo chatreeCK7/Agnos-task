@@ -20,13 +20,13 @@ function App() {
                 <h3 className="question h3">จุดไหนที่คุณปวดท้องมากที่สุด ?</h3>
                 {/* <img className="main-body" src={IMAGES.Abs.overallAbs}/>  */}
                 <AllAbs/>
-                <Epigastrium/>
+                {/* <Epigastrium/>
                 <LUQ/>
                 <LLQ/>
                 <Suprapubic/>
                 <Umbilicus/>
                 <RUQ/>
-                <RLQ/>
+                <RLQ/> */}
             </div> 
             <Button/>
         </Router>

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import IMAGES from '../../question-image.json'
 import Epigastrium from "./epigastrium";
+import LLQ from "./llq";
 
 class AllAbs extends Component{
     /* will use state to render the component to display or not display*/ 
@@ -15,52 +16,81 @@ class AllAbs extends Component{
                 spb: false,
                 rlq: false,
                 ruq: false
-            },
+            }
+            ,
             all_abs: false
         }
         this.handleClick = this.handleClick.bind(this);
     }
-    // toggleState(part){
-        
-    // }
+    selectedAllPartial(){
+        for (let index = 0; index < this.state.partials.length; index++) {
+            const allPartial = this.state.partials[index];
+            if (!allPartial) {
+                return false;
+            }
+        }
+        return true;
+    }
     
     handleClick(part){
         console.log("Yeah,you hit "+part+" !");
         switch(part) {
             case "epi":
-                this.setState((state) => {
-                    return {epi: !state.partials.epi};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.epi,
+                    }
+                })
+                console.log(this.state.partials);
                 break;
             case "llq":
-                this.setState((state) => {
-                    return {llq: !state.partials.llq};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.llq,
+                    }
+                })
                 break;
             case "luq":
-                this.setState((state) => {
-                    return {luq: !state.partials.luq};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.luq,
+                    }
+                })
                 break;
             case "ubc":
-                this.setState((state) => {
-                    return {ubc: !state.partials.ubc};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.ubc,
+                    }
+                })
                 break;
             case "spb":
-                this.setState((state) => {
-                    return {spb: !state.partials.spb};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.spb,
+                    }
+                })
                 break;
             case "rlq":
-                this.setState((state) => {
-                    return {rlq: !state.partials.rlq};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.rlq,
+                    }
+                })
                 break;
             case "ruq":
-                this.setState((state) => {
-                    return {ruq: !state.partials.ruq};
-                });
+                this.setState({
+                    partials: {
+                      ...this.state.partials,
+                      epi: !this.state.partials.ruq,
+                    }
+                })
                 break;
             default:
               // code block
@@ -72,41 +102,59 @@ class AllAbs extends Component{
         return(
             <div id="all-abs">
                 {!this.state.isClicked && (
-                    <div className="all-abs-box" onClick={this.handleClick} /*onChange={this.props.onChange(this.state.isClicked)}*/></div>
+                    <div className="all-abs-box" onClick={() => this.handleClick("allAbs")} /*onChange={this.props.onChange(this.state.isClicked)}*/></div>
                 )}
-                {/* <div className="egt-box2o" onClick={() => { this.handleClick("epi") }}></div>
+                <div className="egt-box2o" onClick={() => { this.handleClick("epi") }}></div>
                 <div className="llq-box2o" onClick={() => { this.handleClick("llq") }}></div>
                 <div className="luq-box2o" onClick={() => { this.handleClick("luq") }}></div>
                 <div className="umbilicus-box2o" onClick={() => { this.handleClick("umbilicus") }}></div>
                 <div className="suprapubic-box2o" onClick={() => { this.handleClick("suprapubic") }}></div>
                 <div className="rlq-box2o" onClick={() => { this.handleClick("rlq") }}></div>
                 <div className="ruq-box2o" onClick={() => { this.handleClick("ruq") }}></div>
-
-                <Epigastrium 
+                {console.log(this.state.partials.epi)}
+                {this.state.partials.epi &&
+                    <Epigastrium 
                     onClick={() => {this.handleClick("epi")}}
-                    showCap={!this.state.all_abs}
-                /> */}
-                {this.state.epi && (
-                    <img className="egt-hl" src={IMAGES.Abs.epigastriumHighlight} onClick={() => { console.log(this.state.epi) }}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="llq-hl" src={IMAGES.Abs.llqHighlight} onClick={this.handleClick}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="luq-hl" src={IMAGES.Abs.luqHighlight} onClick={this.handleClick}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="umbilicus-hl" src={IMAGES.Abs.umbilicusHighlight} onClick={this.handleClick}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="rlq-hl" src={IMAGES.Abs.rlqHighlight} onClick={this.handleClick}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="ruq-hl" src={IMAGES.Abs.ruqHighlight} onClick={this.handleClick}/>
-                )}
-                {this.state.isClicked && (
-                    <img className="suprapubic-hl" src={IMAGES.Abs.suprapubicHighlight} onClick={this.handleClick}/>
-                )}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.llq &&
+                    <LLQ 
+                    onClick={() => {this.handleClick("llq")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.epi &&
+                    <Epigastrium 
+                    onClick={() => {this.handleClick("epi")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.epi &&
+                    <Epigastrium 
+                    onClick={() => {this.handleClick("epi")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.epi &&
+                    <Epigastrium 
+                    onClick={() => {this.handleClick("epi")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.epi &&
+                    <Epigastrium 
+                    onClick={() => {this.handleClick("epi")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+                {this.state.partials.epi &&
+                    <Epigastrium 
+                    onClick={() => {this.handleClick("epi")}}
+                    showCap={!this.state.partials.all_abs && !this.selectedAllPartial()}
+                    />
+                }
+
 
             </div>
         )
