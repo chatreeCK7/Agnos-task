@@ -1,0 +1,19 @@
+{
+    "Abs": {
+        "overallAbs" : "Assets/Images/default-abs.png",
+        "epigastriumActive": "Assets/Images/epigastrium-active.png",
+        "epigastriumHighlight": "Assets/Images/epigastrium-highlight.png",
+        "llqActive": "Assets/Images/llq-active.png",
+        "llqHighlight": "Assets/Images/llq-highlight.png",
+        "luqActive": "Assets/Images/luq-active.png",
+        "luqHighlight": "Assets/Images/luq-highlight.png",
+        "rlqActive": "Assets/Images/rlq-active.png",
+        "rlqHighlight": "Assets/Images/rlq-highlight.png",
+        "ruqActive": "Assets/Images/ruq-active.png",
+        "ruqHighlight": "Assets/Images/ruq-highlight.png",
+        "suprapubicActive": "Assets/Images/suprapubic-active.png",
+        "suprapubicHighlight": "Assets/Images/suprapubic-highlight.png",
+        "umbilicusActive": "Assets/Images/umbilicus-active.png",
+        "umbilicusHighlight": "Assets/Images/umbilicus-highlight.png"
+    }
+}
