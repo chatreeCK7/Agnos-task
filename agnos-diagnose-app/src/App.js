@@ -9,7 +9,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<AllAbs/>}/>
+                <Route path='/Agnos-task' element={<AllAbs/>}/>
                 <Route path='/hand' element={<AllHandJoint/>}/>
             </Routes>
         </Router>
