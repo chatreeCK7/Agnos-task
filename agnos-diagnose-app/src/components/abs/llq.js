@@ -9,9 +9,7 @@ class LLQ extends React.Component{
     render(){
         return(
             <div id="llq">
-                <div className="llq-box2c" onClick={() => {this.props.onClick()}}></div>
                 <img className="llq-hl" src={IMAGES.Abs.llqHighlight}/>
-
                 {this.props.showCap && (
                     <img className="llq-ct" src={IMAGES.Abs.llqActive}/>
                 )}

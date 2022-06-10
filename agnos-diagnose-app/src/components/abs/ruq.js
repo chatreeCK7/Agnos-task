@@ -9,9 +9,7 @@ class RUQ extends React.Component{
     render(){
         return(
             <div id="ruq">
-                <div className="ruq-box2c" onClick={() => {this.props.onClick()}}></div>
                 <img className="ruq-hl" src={IMAGES.Abs.ruqHighlight}/>
-
                 {this.props.showCap && (
                     <img className="ruq-ct" src={IMAGES.Abs.ruqActive}/>
                 )}

@@ -7,21 +7,36 @@
     font-size: 125%;
     color: #696969;
 }
-.container{
+.container-q2{
     position: relative;
-    /* height: max-content; */
     background-color: white;
     box-shadow: 1px 1px 7px #888888;
     border-radius: 3%;
+    margin-left: auto ;
+    margin-right: auto;
+    padding: 0px 0px 40px 0px;
 }
-.container::after{
+.container-q2::after{
+    display: block;
+    background-image: url("../public/Assets/Images/default-finger.png");
+    background-repeat: no-repeat;
+    content: "";
+    margin-left: auto ;
+    margin-right: auto;
+}
+.container-q1{
+    position: relative;
+    background-color: white;
+    margin-left: auto ;
+    margin-right: auto;
+    box-shadow: 1px 1px 7px #888888;
+    border-radius: 3%;
+}
+.container-q1::after{
     display: block;
     background-image: url("../public/Assets/Images/default-abs.png");
     background-repeat: no-repeat;
     content: "";
-    /* content: url("../public/Assets/Images/default-abs.png"); */
-    /* width: fit-content;
-    height: max-content; */
     margin-left: auto ;
     margin-right: auto;
     
@@ -40,16 +55,17 @@
     z-index: 0;
 }
 
-.all-abs-box, .egt-box2o, .egt-box2c, .ruq-box2o, .ruq-box2c, .rlq-box2o, .rlq-box2c, .luq-box2o, .luq-box2c, .llq-box2o, .llq-box2c, .umbilicus-box2o, .umbilicus-box2c, .suprapubic-box2o, .suprapubic-box2c{
+
+.all-abs-box, .egt-box, .ruq-box, .rlq-box, .luq-box, .llq-box, .umbilicus-box, .suprapubic-box, .others-box, .lf-dip-box, .rf-dip-box, .mf-dip-box, .if-dip-box, .lf-pip-box, .rf-pip-box, .mf-pip-box, .if-pip-box, .tb-pip-box, .lf-mcp-box, .rf-mcp-box, .mf-mcp-box, .if-mcp-box, .tb-mcp-box{
     position: absolute;
     /* border: 1px solid black; */
     z-index: 2;
 }
-.egt-hl, .ruq-hl, .rlq-hl, .luq-hl, .llq-hl, .umbilicus-hl, .suprapubic-hl{
+.egt-hl, .ruq-hl, .rlq-hl, .luq-hl, .llq-hl, .umbilicus-hl, .suprapubic-hl, .all-abs-btn-hl, .dip-hl, .pip-hl, .mcp-hl, .others-hl{
     position: absolute;
     z-index: 1;
 }
-.egt-ct, .ruq-ct, .rlq-ct, .luq-ct, .llq-ct, .umbilicus-ct, .suprapubic-ct{
+.egt-ct, .ruq-ct, .rlq-ct, .luq-ct, .llq-ct, .umbilicus-ct, .suprapubic-ct, .dip-ct, .pip-ct, .mcp-ct{
     position: absolute;
 }
 
@@ -69,18 +85,15 @@
 /*-------- Large Devices --------*/
 /*------- 992px and above -------*/
 @media (min-width: 992px) {
-    .container{
+    .container-q1{
         margin-top: 10%;
         width: fit-content;
         height: fit-content;
     }
-    .container::after{
+    .container-q1::after{
         background-size: 420px 450px;
         width: 420px;
         height: 450px;
-    }
-    .main-body{
-        top: 10%;
     }
     .all-abs-box{
         top: 89%;
@@ -89,7 +102,7 @@
         height: 7%;
     }
     /* epigastrium */
-    .egt-box2o, .egt-box2c{
+    .egt-box{
         top: 45%;
         left: 43%;
         width: 10%;
@@ -97,8 +110,8 @@
     }
     .egt-hl{
         top: 14.7%;
-        left: 4.4%;
-        width: 91%;
+        left: 2.4%;
+        width: 95%;
         height: 84%;
     }
     .egt-ct{
@@ -108,16 +121,16 @@
         height: 84%;
     }
     /* luq */
-    .luq-box2o, .luq-box2c{
+    .luq-box{
         top: 51%;
         right: 37%;
         width: 10%;
         height: 7%;
     }
     .luq-hl{
-        top: 14.7%;
-        left: 4.7%;
-        width: 91%;
+        top: 14.8%;
+        left: 1%;
+        width: 98%;
         height: 84%;
     }
     .luq-ct{
@@ -127,17 +140,17 @@
         height: 84%;
     }
     /* llq */
-    .llq-box2o, .llq-box2c{
+    .llq-box{
         top: 60%;
         right: 37%;
         width: 10%;
         height: 7.5%;
     }
     .llq-hl{
-        top: 15%;
-        left: 4.2%;
-        width: 92%;
-        height: 84%;
+        top: 14.3%;
+        left: 0.5%;
+        width: 99%;
+        height: 85%;
     }
     .llq-ct{
         top: 15%;
@@ -146,7 +159,7 @@
         height: 84%;
     }
     /* umbilicus */
-    .umbilicus-box2o, .umbilicus-box2c{
+    .umbilicus-box{
         top: 56%;
         left: 44%;
         width: 9%;
@@ -154,8 +167,8 @@
     }
     .umbilicus-hl{
         top: 14.9%;
-        left: 4.5%;
-        width: 91%;
+        left: 2%;
+        width: 96%;
         height: 84%;
     }
     .umbilicus-ct{
@@ -165,7 +178,7 @@
         height: 84%;
     }
     /* suprapubic */
-    .suprapubic-box2o, .suprapubic-box2c{
+    .suprapubic-box{
         top: 65%;
         left: 43%;
         width: 10%;
@@ -173,8 +186,8 @@
     }
     .suprapubic-hl{
         top: 14.6%;
-        left: 3.89%;
-        width: 92%;
+        left: 1.39%;
+        width: 97%;
         height: 85%;
     }
     .suprapubic-ct{
@@ -184,7 +197,7 @@
         height: 84%;
     }
     /* rlq */
-    .rlq-box2o, .rlq-box2c{
+    .rlq-box{
         top: 60%;
         left: 33%;
         width: 10%;
@@ -192,8 +205,8 @@
     }
     .rlq-hl{
         top: 15%;
-        left: 3.6%;
-        width: 92%;
+        left: 0.7%;
+        width: 98%;
         height: 84%;
     }
     .rlq-ct{
@@ -203,7 +216,7 @@
         height: 84%;
     }
     /* ruq */
-    .ruq-box2o, .ruq-box2c{
+    .ruq-box{
         top: 51%;
         left: 34%;
         width: 10%;
@@ -211,14 +224,167 @@
     }
     .ruq-hl{
         top: 14.7%;
-        left: 4.1%;
-        width: 91%;
+        left: 0.8%;
+        width: 98%;
         height: 84%;
     }
     .ruq-ct{
         top: 22%;
-        left: 7%;
+        left: 4%;
         width: 91%;
+        height: 84%;
+    }
+    .all-abs-btn-hl{
+        top: 15.5%;
+        left: 1.5%;
+        width: 97%;
+        height: 84.2%;
+    }
+    .container-q2{
+        margin-top: 10%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container-q2::after{
+        background-size: 420px 450px;
+        width: 420px;
+        height: 450px;
+    }
+    .others-box{
+        top: 85%;
+        left: 14%;
+        width: 69%;
+        height: 7%;
+    }
+    /* dip */
+    .lf-dip-box{
+        top: 32%;
+        left: 20%;
+        width: 7%;
+        height: 3%;
+    }
+    .rf-dip-box{
+        top: 23.5%;
+        left: 32%;
+        width: 7%;
+        height: 3%;
+    }
+    .mf-dip-box{
+        top: 20%;
+        left: 43%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-dip-box{
+        top: 22%;
+        left: 55%;
+        width: 7%;
+        height: 3%;
+    }
+    .dip-hl{
+        top: 12.4%;
+        left: 0.2%;
+        width: 99.5%;
+        height: 82%;
+    }
+    .dip-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+    /* pip */
+    .lf-pip-box{
+        top: 38%;
+        left: 24%;
+        width: 6%;
+        height: 3%;
+    }
+    .rf-pip-box{
+        top: 31.5%;
+        left: 33%;
+        width: 7%;
+        height: 3%;
+    }
+    .mf-pip-box{
+        top: 29%;
+        left: 44%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-pip-box{
+        top: 30%;
+        left: 55%;
+        width: 7.5%;
+        height: 3%;
+    }
+    .tb-pip-box{
+        top: 45.5%;
+        right: 17%;
+        width: 7%;
+        height: 3.5%;
+    }
+    .pip-hl{
+        top: 12.45%;
+        left: 0%;
+        width: 100%;
+        height: 81.7%;
+    }
+    .pip-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+     /* mcp */
+     .lf-mcp-box{
+        top: 45%;
+        left: 27%;
+        width: 8.5%;
+        height: 4%;
+    }
+    .rf-mcp-box{
+        top: 42%;
+        left: 36%;
+        width: 8%;
+        height: 4.5%;
+    }
+    .mf-mcp-box{
+        top: 41%;
+        left: 44.5%;
+        width: 8.5%;
+        height: 4%;
+    }
+    .if-mcp-box{
+        top: 40.5%;
+        left: 54%;
+        width: 8%;
+        height: 4.5%;
+    }
+    .tb-mcp-box{
+        top: 54%;
+        right: 25%;
+        width: 7%;
+        height: 5%
+        ;
+    }
+    .mcp-hl{
+        top: 11.6%;
+        left: 0%;
+        width: 100%;
+        height: 82.9%;
+    }
+    .mcp-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+
+    .others-hl{
+        top: 9.2%;
+        left: 0%;
+        width: 100%;
         height: 84%;
     }
     .next{
@@ -226,23 +392,18 @@
         margin-bottom: 50px;
     }
 }
-
-
 /*------- Medium Devices -------*/
 /*------- 768px to 991px -------*/
 @media (min-width:768px) and (max-width:991px){
-    .container{
-        margin-top: 30%;
+    .container-q1{
+        margin-top: 10%;
         width: fit-content;
         height: fit-content;
     }
-    .container::after{
+    .container-q1::after{
         background-size: 420px 450px;
         width: 420px;
         height: 450px;
-    }
-    .main-body{
-        top: 10%;
     }
     .all-abs-box{
         top: 89%;
@@ -251,7 +412,7 @@
         height: 7%;
     }
     /* epigastrium */
-    .egt-box2o, .egt-box2c{
+    .egt-box{
         top: 45%;
         left: 43%;
         width: 10%;
@@ -259,8 +420,8 @@
     }
     .egt-hl{
         top: 14.7%;
-        left: 4.4%;
-        width: 91%;
+        left: 2.4%;
+        width: 95%;
         height: 84%;
     }
     .egt-ct{
@@ -270,7 +431,7 @@
         height: 84%;
     }
     /* luq */
-    .luq-box2o, .luq-box2c{
+    .luq-box{
         top: 51%;
         right: 37%;
         width: 10%;
@@ -278,8 +439,8 @@
     }
     .luq-hl{
         top: 14.8%;
-        left: 4.7%;
-        width: 91%;
+        left: 1%;
+        width: 98%;
         height: 84%;
     }
     .luq-ct{
@@ -289,17 +450,17 @@
         height: 84%;
     }
     /* llq */
-    .llq-box2o, .llq-box2c{
+    .llq-box{
         top: 60%;
         right: 37%;
         width: 10%;
         height: 7.5%;
     }
     .llq-hl{
-        top: 15%;
-        left: 4.2%;
-        width: 92%;
-        height: 84%;
+        top: 14.3%;
+        left: 0.5%;
+        width: 99%;
+        height: 85%;
     }
     .llq-ct{
         top: 15%;
@@ -308,7 +469,7 @@
         height: 84%;
     }
     /* umbilicus */
-    .umbilicus-box2o, .umbilicus-box2c{
+    .umbilicus-box{
         top: 56%;
         left: 44%;
         width: 9%;
@@ -316,8 +477,8 @@
     }
     .umbilicus-hl{
         top: 14.9%;
-        left: 4.5%;
-        width: 91%;
+        left: 2%;
+        width: 96%;
         height: 84%;
     }
     .umbilicus-ct{
@@ -327,7 +488,7 @@
         height: 84%;
     }
     /* suprapubic */
-    .suprapubic-box2o, .suprapubic-box2c{
+    .suprapubic-box{
         top: 65%;
         left: 43%;
         width: 10%;
@@ -335,8 +496,8 @@
     }
     .suprapubic-hl{
         top: 14.6%;
-        left: 3.89%;
-        width: 92%;
+        left: 1.39%;
+        width: 97%;
         height: 85%;
     }
     .suprapubic-ct{
@@ -346,16 +507,16 @@
         height: 84%;
     }
     /* rlq */
-    .rlq-box2o, .rlq-box2c{
+    .rlq-box{
         top: 60%;
         left: 33%;
         width: 10%;
         height: 9%;
     }
     .rlq-hl{
-        top: 15.2%;
-        left: 3.6%;
-        width: 92%;
+        top: 15%;
+        left: 0.7%;
+        width: 98%;
         height: 84%;
     }
     .rlq-ct{
@@ -365,22 +526,175 @@
         height: 84%;
     }
     /* ruq */
-    .ruq-box2o, .ruq-box2c{
+    .ruq-box{
         top: 51%;
         left: 34%;
         width: 10%;
         height: 8%;
     }
     .ruq-hl{
-        top: 14.8%;
-        left: 4.1%;
-        width: 91%;
+        top: 14.7%;
+        left: 0.8%;
+        width: 98%;
         height: 84%;
     }
     .ruq-ct{
         top: 22%;
-        left: 7%;
+        left: 4%;
         width: 91%;
+        height: 84%;
+    }
+    .all-abs-btn-hl{
+        top: 15.5%;
+        left: 1.5%;
+        width: 97%;
+        height: 84.2%;
+    }
+    .container-q2{
+        margin-top: 10%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container-q2::after{
+        background-size: 420px 450px;
+        width: 420px;
+        height: 450px;
+    }
+    .others-box{
+        top: 85%;
+        left: 14%;
+        width: 69%;
+        height: 7%;
+    }
+    /* dip */
+    .lf-dip-box{
+        top: 32%;
+        left: 20%;
+        width: 7%;
+        height: 3%;
+    }
+    .rf-dip-box{
+        top: 23.5%;
+        left: 32%;
+        width: 7%;
+        height: 3%;
+    }
+    .mf-dip-box{
+        top: 20%;
+        left: 43%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-dip-box{
+        top: 22%;
+        left: 55%;
+        width: 7%;
+        height: 3%;
+    }
+    .dip-hl{
+        top: 12.4%;
+        left: 0.2%;
+        width: 99.5%;
+        height: 82%;
+    }
+    .dip-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+    /* pip */
+    .lf-pip-box{
+        top: 38%;
+        left: 24%;
+        width: 6%;
+        height: 3%;
+    }
+    .rf-pip-box{
+        top: 31.5%;
+        left: 33%;
+        width: 7%;
+        height: 3%;
+    }
+    .mf-pip-box{
+        top: 29%;
+        left: 44%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-pip-box{
+        top: 30%;
+        left: 55%;
+        width: 7.5%;
+        height: 3%;
+    }
+    .tb-pip-box{
+        top: 45.5%;
+        right: 17%;
+        width: 7%;
+        height: 3.5%;
+    }
+    .pip-hl{
+        top: 12.45%;
+        left: 0%;
+        width: 100%;
+        height: 81.7%;
+    }
+    .pip-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+     /* mcp */
+     .lf-mcp-box{
+        top: 45%;
+        left: 27%;
+        width: 8.5%;
+        height: 4%;
+    }
+    .rf-mcp-box{
+        top: 42%;
+        left: 36%;
+        width: 8%;
+        height: 4.5%;
+    }
+    .mf-mcp-box{
+        top: 41%;
+        left: 44.5%;
+        width: 8.5%;
+        height: 4%;
+    }
+    .if-mcp-box{
+        top: 40.5%;
+        left: 54%;
+        width: 8%;
+        height: 4.5%;
+    }
+    .tb-mcp-box{
+        top: 54%;
+        right: 25%;
+        width: 7%;
+        height: 5%
+        ;
+    }
+    .mcp-hl{
+        top: 11.6%;
+        left: 0%;
+        width: 100%;
+        height: 82.9%;
+    }
+    .mcp-ct{
+        top: 12.05%;
+        left: 0%;
+        width: 100%;
+        height: 84.2%;
+    }
+
+    .others-hl{
+        top: 9.2%;
+        left: 0%;
+        width: 100%;
         height: 84%;
     }
     .next{
@@ -391,157 +705,310 @@
 /*------- Small Devices -------*/
 /*- equal to or less than 767px -*/
 @media(max-width:767px){
-    .container{
+    .container-q1{
         margin-top: 40%;
         width: fit-content;
         height: fit-content;
     }
-    .container::after{
-        background-size: 210px 225px;
-        width: 210px;
-        height: 225px;
-    }
-    .main-body{
-        top: 10%;
+    .container-q1::after{
+        background-size: 294px 315px;
+        width: 294px;
+        height: 315px;
     }
     .all-abs-box{
-        top: 90.7%;
-        left: 36.5%;
-        width: 24%;
-        height: 6%;
+        top: 89.5%;
+        left: 32%;
+        width: 32%;
+        height: 7%;
     }
     /* epigastrium */
-    .egt-box2o, .egt-box2c{
-        top: 51%;
-        left: 44%;
-        width: 9%;
+    .egt-box{
+        top: 48%;
+        left: 43%;
+        width: 11%;
         height: 7%;
     }
     .egt-hl{
-        top: 22.7%;
-        left: 12%;
-        width: 76%;
-        height: 80%;
+        top: 17%;
+        left: 2.4%;
+        width: 95%;
+        height: 84%;
     }
     .egt-ct{
-        top: 26%;
-        left: 12.5%;
-        width: 78%;
+        top: 21%;
+        left: 7.5%;
+        width: 85%;
         height: 71%;
     }
     /* luq */
-    .luq-box2o, .luq-box2c{
-        top: 56%;
-        left: 52.5%;
-        width: 8%;
+    .luq-box{
+        top: 53%;
+        right: 36%;
+        width: 11%;
         height: 8%;
     }
     .luq-hl{
-        top: 22.3%;
-        left: 13.1%;
-        width: 74%;
-        height: 80%;
+        top: 16.8%;
+        left: 1%;
+        width: 98%;
+        height: 84%;
     }
     .luq-ct{
-        top: 26%;
-        left: 11.5%;
-        width: 78%;
-        height: 71%;
+        top: 17%;
+        left: 7%;
+        width: 91%;
+        height: 84%;
     }
     /* llq */
-    .llq-box2o, .llq-box2c{
-        top: 65%;
-        left: 53%;
-        width: 7.5%;
-        height: 8%;
+    .llq-box{
+        top: 62%;
+        right: 36%;
+        width: 11%;
+        height: 7.5%;
     }
     .llq-hl{
-        top: 23.5%;
-        left: 13.65%;
-        width: 73%;
-        height: 77%;
+        top: 16.3%;
+        left: 0.5%;
+        width: 99%;
+        height: 85%;
     }
     .llq-ct{
-        top: 26%;
-        left: 11.5%;
-        width: 78%;
-        height: 71%;
+        top: 15%;
+        left: 5%;
+        width: 91%;
+        height: 84%;
     }
     /* umbilicus */
-    .umbilicus-box2o, .umbilicus-box2c{
-        top: 61.5%;
-        left: 45%;
-        width: 7.5%;
-        height: 5.8%;
+    .umbilicus-box{
+        top: 58%;
+        left: 43.5%;
+        width: 9.5%;
+        height: 6.5%;
     }
     .umbilicus-hl{
-        top: 23.5%;
-        left: 13.5%;
-        width: 73%;
-        height: 77%;
+        top: 16.9%;
+        left: 2%;
+        width: 96%;
+        height: 84%;
     }
     .umbilicus-ct{
-        top: 28%;
-        left: 12.5%;
-        width: 76%;
-        height: 69%;
+        top: 17%;
+        left: 4%;
+        width: 91%;
+        height: 84%;
     }
     /* suprapubic */
-    .suprapubic-box2o, .suprapubic-box2c{
-        top: 69.5%;
-        left: 44.5%;
-        width: 8.6%;
-        height: 6.6%;
+    .suprapubic-box{
+        top: 66%;
+        left: 43.1%;
+        width: 10.3%;
+        height: 8%;
     }
     .suprapubic-hl{
-        top: 23.4%;
-        left: 13.4%;
-        width: 73%;
-        height: 77%;
+        top: 16%;
+        left: 1.39%;
+        width: 97%;
+        height: 85%;
     }
     .suprapubic-ct{
-        top: 28%;
-        left: 15%;
-        width: 76%;
-        height: 69%;
+        top: 16%;
+        left: 8%;
+        width: 91%;
+        height: 84%;
     }
     /* rlq */
-    .rlq-box2o, .rlq-box2c{
-        top: 65%;
-        left: 36.7%;
-        width: 8.2%;
-        height: 8.7%;
+    .rlq-box{
+        top: 62%;
+        left: 32%;
+        width: 11%;
+        height: 9%;
     }
     .rlq-hl{
-        top: 23.5%;
-        left: 13.15%;
-        width: 73.2%;
-        height: 77%;
+        top: 16.7%;
+        left: 0.7%;
+        width: 98%;
+        height: 84%;
     }
     .rlq-ct{
-        top: 21%;
-        left: 11.5%;
-        width: 78%;
-        height: 71%;
+        top: 11%;
+        left: 4%;
+        width: 91%;
+        height: 84%;
     }
     /* ruq */
-    .ruq-box2o, .ruq-box2c{
-        top: 56%;
-        left: 36.7%;
-        width: 8.2%;
+    .ruq-box{
+        top: 53%;
+        left: 33%;
+        width: 11%;
         height: 8%;
     }
     .ruq-hl{
-        top: 23.7%;
-        left: 13.15%;
-        width: 73.3%;
-        height: 77%;
+        top: 16.8%;
+        left: 0.8%;
+        width: 98%;
+        height: 84%;
     }
     .ruq-ct{
+        top: 22%;
+        left: 4%;
+        width: 91%;
+        height: 84%;
+    }
+    .all-abs-btn-hl{
+        top: 16%;
+        left: 1%;
+        width: 98%;
+        height: 84.2%;
+    }
+    .container-q2{
+        margin-top: 40%;
+        width: fit-content;
+        height: fit-content;
+    }
+    .container-q2::after{
+        background-size: 294px 315px;
+        width: 294px;
+        height: 315px;
+    }
+    .h3{
+        font-size: 100%;
+    }
+    .others-box{
+        top: 83%;
+        left: 14.5%;
+        width: 69%;
+        height: 6.5%;
+    }
+    /* dip */
+    .lf-dip-box{
+        top: 33.7%;
+        left: 20.7%;
+        width: 6%;
+        height: 3%;
+    }
+    .rf-dip-box{
+        top: 25.7%;
+        left: 33%;
+        width: 5.5%;
+        height: 3%;
+    }
+    .mf-dip-box{
+        top: 22.5%;
+        left: 43%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-dip-box{
+        top: 24.5%;
+        left: 55.5%;
+        width: 6.5%;
+        height: 2.5%;
+    }
+    .dip-hl{
+        top: 16.2%;
+        left: 0.2%;
+        width: 100%;
+        height: 73.3%;
+    }
+    .dip-ct{
+        top: 17.55%;
+        left: 11%;
+        width: 80%;
+        height: 69.2%;
+    }
+    /* pip */
+    .lf-pip-box{
+        top: 39%;
+        left: 24%;
+        width: 6%;
+        height: 3.5%;
+    }
+    .rf-pip-box{
+        top: 33.5%;
+        left: 33.5%;
+        width: 7%;
+        height: 3%;
+    }
+    .mf-pip-box{
+        top: 30.7%;
+        left: 43.7%;
+        width: 7%;
+        height: 3%;
+    }
+    .if-pip-box{
         top: 32%;
-        left: 11.5%;
-        width: 78%;
-        height: 71%;
+        left: 55%;
+        width: 7.5%;
+        height: 3%;
+    }
+    .tb-pip-box{
+        top: 46.5%;
+        right: 17.5%;
+        width: 6%;
+        height: 3.5%;
+    }
+    .pip-hl{
+        top: 16.2%;
+        left: 0.2%;
+        width: 100%;
+        height: 73.7%;
+    }
+    .pip-ct{
+        top: 18.55%;
+        left: 11%;
+        width: 80%;
+        height: 69.2%;
+    }
+     /* mcp */
+     .lf-mcp-box{
+        top: 46%;
+        left: 27.5%;
+        width: 8%;
+        height: 4%;
+    }
+    .rf-mcp-box{
+        top: 43.5%;
+        left: 35.5%;
+        width: 8.3%;
+        height: 4.5%;
+    }
+    .mf-mcp-box{
+        top: 42%;
+        left: 44.5%;
+        width: 8%;
+        height: 3.5%;
+    }
+    .if-mcp-box{
+        top: 42%;
+        left: 54%;
+        width: 8%;
+        height: 3.5%;
+    }
+    .tb-mcp-box{
+        top: 54.5%;
+        right: 24.5%;
+        width: 7.5%;
+        height: 4.5%;
+        ;
+    }
+    .mcp-hl{
+        top: 16.5%;
+        left: 0.2%;
+        width: 100%;
+        height: 73.3%;
+    }
+    .mcp-ct{
+        top: 19.55%;
+        left: 11%;
+        width: 80%;
+        height: 69.2%;
+    }
+
+    .others-hl{
+        top: 17.5%;
+        left: 0.2%;
+        width: 100%;
+        height: 73%;
     }
     .next{
         width: 270px;

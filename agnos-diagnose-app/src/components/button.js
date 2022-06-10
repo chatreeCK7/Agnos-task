@@ -1,7 +1,7 @@
-function Button(){
+function Button(props){
     return(
-        <button className="next">
-            <h3 className="h3">ต่อไป</h3>
+        <button className="next back">
+            <h3 className="h3">{props.title}</h3>
         </button>
     );
 }

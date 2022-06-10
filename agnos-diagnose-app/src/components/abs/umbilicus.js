@@ -9,9 +9,7 @@ class Umbilicus extends React.Component{
     render(){
         return(
             <div id="umbilicus">
-                <div className="umbilicus-box2c" onClick={() => {this.props.onClick()}}></div>
                 <img className="umbilicus-hl" src={IMAGES.Abs.umbilicusHighlight}/>
-
                 {this.props.showCap && (
                     <img className="umbilicus-ct" src={IMAGES.Abs.umbilicusActive}/>
                 )}

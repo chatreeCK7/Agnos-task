@@ -1,6 +1,7 @@
 {
     "Abs": {
         "overallAbs" : "Assets/Images/default-abs.png",
+        "allAbsButton" : "Assets/Images/all-over-highlight.png",
         "epigastriumActive": "Assets/Images/epigastrium-active.png",
         "epigastriumHighlight": "Assets/Images/epigastrium-highlight.png",
         "llqActive": "Assets/Images/llq-active.png",
@@ -15,5 +16,15 @@
         "suprapubicHighlight": "Assets/Images/suprapubic-highlight.png",
         "umbilicusActive": "Assets/Images/umbilicus-active.png",
         "umbilicusHighlight": "Assets/Images/umbilicus-highlight.png"
+    },
+    "Hand":{
+        "overallHand" : "Assets/Images/default-finger.png",
+        "others": "Assets/Images/others-highlight.png",
+        "dipActive" : "Assets/Images/dip-active.png",
+        "dipHighlight" : "Assets/Images/dip-highlight.png",
+        "mcpActive" : "Assets/Images/mcp-active.png",
+        "mcpHighlight" : "Assets/Images/mcp-highlight.png",
+        "pipActive" : "Assets/Images/pip-active.png",
+        "pipHighlight" : "Assets/Images/pip-highlight.png"
     }
 }

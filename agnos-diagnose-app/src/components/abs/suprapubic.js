@@ -9,9 +9,7 @@ class Suprapubic extends React.Component{
     render(){
         return(
             <div id="suprapubic">
-               <div className="suprapubic-box2c" onClick={() => {this.props.onClick()}}></div>
                 <img className="suprapubic-hl" src={IMAGES.Abs.suprapubicHighlight}/>
-
                 {this.props.showCap && (
                     <img className="suprapubic-ct" src={IMAGES.Abs.suprapubicActive}/>
                 )}
