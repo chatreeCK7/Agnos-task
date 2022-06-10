@@ -3,13 +3,7 @@ import React, {lazy} from 'react'
 import { BrowserRouter as  Router, Routes, Route } from 'react-router-dom'
 import IMAGES from './question-image.json'
 import Button from './components/button';
-import Epigastrium from './components/abs/epigastrium';
-import LUQ from './components/abs/luq';
-import LLQ from './components/abs/llq';
-import RLQ from './components/abs/rlq';
-import RUQ from './components/abs/ruq';
-import Suprapubic from './components/abs/suprapubic';
-import Umbilicus from './components/abs/umbilicus';
+
 import AllAbs from './components/abs/all-abs';
 
 function App() {
