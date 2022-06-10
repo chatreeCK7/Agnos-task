@@ -10,7 +10,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path='/Agnos-task' element={<AllAbs/>}/>
-                <Route path='/hand' element={<AllHandJoint/>}/>
+                <Route path='/Agnos-task/hand' element={<AllHandJoint/>}/>
             </Routes>
         </Router>
     );
