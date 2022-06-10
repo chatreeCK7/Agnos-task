@@ -1,7 +1,7 @@
 # Agnos-task
 
 
-Link to หน้าคำถาม "จุดไหนที่คุณปวดท้องมากที่สุด?" : https://clever-cobbler-7ec6cf.netlify.app/
+Link to หน้าคำถาม "จุดไหนที่คุณปวดนิ้วมากที่สุด?" : https://clever-cobbler-7ec6cf.netlify.app/
 <br>
 Link to หน้าคำถาม "จุดไหนที่คุณปวดท้องมากที่สุด?" : https://unique-valkyrie-5780ec.netlify.app/
 
